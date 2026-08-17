@@ -242,7 +242,7 @@ section { position: relative; padding: clamp(72px, 10vw, 120px) clamp(16px, 5vw,
 
 .cover-guest {
   color: var(--gold-soft);
-  font-size: clamp(0.72rem, 2vw, 0.85rem);
+  font-size: clamp(0.72rem, 5vw, 0.85rem);
   letter-spacing: 1.5px;
   margin-top: 14px;
   text-shadow: 0 1px 8px rgba(0,0,0,0.5);

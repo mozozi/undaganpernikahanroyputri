@@ -240,6 +240,19 @@ section { position: relative; padding: clamp(72px, 10vw, 120px) clamp(16px, 5vw,
   text-shadow: 0 1px 8px rgba(0,0,0,0.5);
 }
 
+.cover-guest {
+  color: var(--gold-soft);
+  font-size: clamp(0.72rem, 2vw, 0.85rem);
+  letter-spacing: 1.5px;
+  margin-top: 14px;
+  text-shadow: 0 1px 8px rgba(0,0,0,0.5);
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.cover-guest.has-name {
+  opacity: 1;
+}
+
 /* ==================================================
    BUTTON
    ================================================== */
@@ -502,6 +515,17 @@ section { position: relative; padding: clamp(72px, 10vw, 120px) clamp(16px, 5vw,
   font-weight: 300;
   font-size: clamp(0.85rem, 2.6vw, 0.98rem);
   overflow-wrap: break-word;
+}
+.hero-guest {
+  color: var(--gold);
+  font-family: var(--script);
+  font-size: clamp(1.5rem, 5vw, 2.4rem);
+  margin-bottom: 10px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+.hero-guest.has-name {
+  opacity: 1;
 }
 .hero-date-chip {
   display: inline-flex;

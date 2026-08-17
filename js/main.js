@@ -16,8 +16,35 @@
   }
 
   /* ==================================================
-     1. URL PARAM — Nama Tamu (mis. ?untuk=Andi)
+     1. URL PARAM — Nama Tamu (mis. ?to=Budi)
      ================================================== */
+  const params = new URLSearchParams(window.location.search);
+  const guestName = params.get('to') || params.get('untuk') || '';
+
+  const coverGuestEl = $('#coverGuest');
+  const heroGuestEl  = $('#heroGuest');
+
+  if (guestName) {
+    const safeName = escapeHtml(guestName.trim());
+
+    if (coverGuestEl) {
+      coverGuestEl.textContent = 'Kepada Yth. ' + safeName;
+      coverGuestEl.classList.add('has-name');
+    }
+    if (heroGuestEl) {
+      heroGuestEl.textContent = 'Kepada Yth. ' + safeName;
+      heroGuestEl.classList.add('has-name');
+    }
+
+    // Auto-fill nama tamu di form RSVP & ucapan
+    const rsvpNameEl  = $('#rsvpName');
+    const ucpNameEl   = $('#ucpName');
+    if (rsvpNameEl) rsvpNameEl.value = guestName.trim();
+    if (ucpNameEl)  ucpNameEl.value  = guestName.trim();
+
+    // Update page title
+    document.title = 'Undangan untuk ' + safeName + ' — Roy & Putri';
+  }
 
   /* ==================================================
      2. COVER
